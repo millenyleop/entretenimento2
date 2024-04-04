@@ -1,0 +1,24 @@
+ALTER TABLE ENTRETERIMENTO ADD COLUMN NACIONALIDADE VARCHAR(50);
+UPDATE ENTRETERIMENTO SET NACIONALIDADE = 'Estados Unidos';
+UPDATE ENTRETERIMENTO SET NACIONALIDADE = 'Brasil' WHERE NOME = 'Cidade de Deus';
+UPDATE ENTRETERIMENTO SET NACIONALIDADE = 'Brasil' WHERE NOME = 'Tropa de Elite';
+UPDATE ENTRETERIMENTO SET NACIONALIDADE = 'Brasil' WHERE NOME = 'Central do Brasil';
+UPDATE ENTRETERIMENTO SET NACIONALIDADE = 'Brasil' WHERE NOME = 'O Auto da Compadecida';
+UPDATE ENTRETERIMENTO SET NACIONALIDADE = 'Espanha' WHERE NOME = 'La Casa de Papel';
+UPDATE ENTRETERIMENTO SET NACIONALIDADE = 'Irlanda/Canadá' WHERE NOME = 'Vikings';
+UPDATE ENTRETERIMENTO SET NACIONALIDADE = 'Espanha' WHERE NOME = 'Money Heist';
+UPDATE ENTRETERIMENTO SET NACIONALIDADE = 'Polônia/Estados Unidos' WHERE NOME = 'The Witcher';
+UPDATE ENTRETERIMENTO SET NACIONALIDADE = 'Estados Unidos/Alemanha' WHERE NOME = 'Bastardos Inglórios';
+ALTER TABLE ENTRETERIMENTO ADD COLUMN RANKING INT;
+ALTER TABLE ENTRETERIMENTO ADD COLUMN RANKING_TIPO VARCHAR(50);
+ALTER TABLE ENTRETERIMENTO ADD COLUMN RANKING_NOME VARCHAR(50);
+INSERT INTO ENTRETERIMENTO (NOME, TIPO, DIRETOR, ATOR_PRINCIPAL, ATRIZ_PRINCIPAL, ANO_LANCAMENTO, DURACAO_MINUTOS, CLASSIFICACAO_ETARIA, GENERO, NACIONALIDADE, RANKING, RANKING_TIPO, RANKING_NOME) VALUES 
+('O Mundo Depois de Nós', 'FILME', 'Todd Phillips', 'Julia Roberts', 'Julia Roberts', 2023, 120, '16+', 'Suspense', 'Estados Unidos', 1, 'NETFLIX', 'NETFLIX'),
+('O Maestro', 'FILME', 'Todd Haynes', 'Timothée Chalamet', 'Rachel Zegler', 2023, 130, '16+', 'Drama', 'Estados Unidos', 2, 'NETFLIX', 'NETFLIX'),
+('O Assassino', 'FILME', 'David Fincher', 'Benedict Cumberbatch', 'Cate Blanchett', 2023, 140, '18+', 'Crime', 'Estados Unidos', 1, 'AMAZON PRIME', 'AMAZON PRIME'),
+('A Fuga das Galinhas: A Ameaça dos Nuggets', 'FILME', 'Peter Avanzino', 'Josh Gad', 'Leslie Mann', 2023, 90, '12+', 'Comédia', 'Estados Unidos', 2, 'AMAZON PRIME', 'AMAZON PRIME');
+('Amsterdam', 'FILME', 'David O. Russell', 'Christian Bale', 'Margot Robbie', 2022, 120, '0', 'Drama, História, Comédia', 'Estados Unidos', 1, 'HBO MAX', 'HBO MAX'),
+('Wonka', 'FILME', 'Não especificado', 'Timothee Chalamet', 'Não especificado', 2023, 100, '0', 'Aventura, Família, Fantasia', 'Estados Unidos', 2, 'HBO MAX', 'HBO MAX');
+UPDATE tabela_filmes
+SET RANKING_NOME = 'Netflix'
+WHERE NOME_FILME IN ('Stranger Things', 'Black Mirror', 'Inception', 'Breaking Bad', 'Friends', 'The Dark Knight', 'The Shawshank Redemption', 'Kill Bill: Volume 1', 'Entrevista com o Vampiro', 'Sr. e Sra. Smith', 'Money Heist (La Casa de Papel)', 'The Witcher');
