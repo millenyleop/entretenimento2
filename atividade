@@ -59,7 +59,7 @@ SET RANKING =
         WHEN NOME IN ('Breaking Bad', 'Friends', 'The Dark Knight', 'The Shawshank Redemption', 'The Matrix', 'Interview with the Vampire', 'Kill Bill: Volume 1', 'Mr. & Mrs. Smith', 'Money Heist') THEN 1
         WHEN NOME IN ('Pulp Fiction', 'Fight Club', 'The Godfather', 'Forrest Gump', 'Bastardos Inglórios', 'Central do Brasil', 'Vikings', 'Tropa de Elite') THEN 2
         WHEN NOME IN ('The Irishman', 'Inception', 'Cidade de Deus', 'The Witcher') THEN 3
-        ELSE 0
+        ELSE 15
     END;
 
 
