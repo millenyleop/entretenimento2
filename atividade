@@ -19,6 +19,47 @@ INSERT INTO ENTRETERIMENTO (NOME, TIPO, DIRETOR, ATOR_PRINCIPAL, ATRIZ_PRINCIPAL
 ('A Fuga das Galinhas: A Ameaça dos Nuggets', 'FILME', 'Peter Avanzino', 'Josh Gad', 'Leslie Mann', 2023, 90, '12+', 'Comédia', 'Estados Unidos', 2, 'AMAZON PRIME', 'AMAZON PRIME');
 ('Amsterdam', 'FILME', 'David O. Russell', 'Christian Bale', 'Margot Robbie', 2022, 120, '0', 'Drama, História, Comédia', 'Estados Unidos', 1, 'HBO MAX', 'HBO MAX'),
 ('Wonka', 'FILME', 'Não especificado', 'Timothee Chalamet', 'Não especificado', 2023, 100, '0', 'Aventura, Família, Fantasia', 'Estados Unidos', 2, 'HBO MAX', 'HBO MAX');
-UPDATE tabela_filmes
+UPDATE ENTRETERIMENTO
 SET RANKING_NOME = 'Netflix'
-WHERE NOME_FILME IN ('Stranger Things', 'Black Mirror', 'Inception', 'Breaking Bad', 'Friends', 'The Dark Knight', 'The Shawshank Redemption', 'Kill Bill: Volume 1', 'Entrevista com o Vampiro', 'Sr. e Sra. Smith', 'Money Heist (La Casa de Papel)', 'The Witcher');
+WHERE NOME IN ('Stranger Things', 'Black Mirror', 'Inception', 'Breaking Bad', 'Friends', 'The Dark Knight', 'The Shawshank Redemption', 'Kill Bill: Volume 1', 'Entrevista com o Vampiro', 'Sr. e Sra. Smith', 'Money Heist (La Casa de Papel)', 'The Witcher');
+UPDATE ENTRETERIMENTO
+UPDATE ENTRETERIMENTO
+SET RANKING_NOME = 'HBO Max'
+WHERE RANKING_NOME IS NULL;
+UPDATE ENTRETERIMENTO
+SET RANKING_TIPO = CASE 
+                        WHEN NOME IN ('Breaking Bad', 'Friends', 'The Matrix', 'The Dark Knight', 'The Shawshank Redemption', 'Kill Bill: Volume 1', 'Interview with the Vampire', 'Mr. & Mrs. Smith', 'Money Heist') THEN 'Nacional'
+                        WHEN NOME IN ('Forrest Gump', 'Fight Club', 'Vikings', 'Pulp Fiction', 'The Godfather', 'Bastardos Inglórios', 'Tropa de Elite', 'Central do Brasil') THEN 'Nacional'
+                        ELSE 'Mundial'
+                  END;
+UPDATE Entreterimento
+SET RANKING = CASE 
+                WHEN NOME IN ('Breaking Bad', 'Friends', 'The Dark Knight', 'The Shawshank Redemption', 'The Matrix', 'Interview with the Vampire', 'Kill Bill: Volume 1', 'Mr. & Mrs. Smith', 'Money Heist') THEN 1
+                ELSE RANKING
+            END
+WHERE NOME IN ('Breaking Bad', 'Friends', 'The Dark Knight', 'The Shawshank Redemption', 'The Matrix', 'Interview with the Vampire', 'Kill Bill: Volume 1', 'Mr. & Mrs. Smith', 'Money Heist');
+
+UPDATE Entreterimento
+SET RANKING = CASE 
+                WHEN NOME IN ('Pulp Fiction', 'Fight Club', 'The Godfather', 'Forrest Gump', 'Bastardos Inglórios', 'Central do Brasil', 'Vikings', 'Tropa de Elite') THEN 2
+                ELSE RANKING
+            END
+WHERE NOME IN ('Pulp Fiction', 'Fight Club', 'The Godfather', 'Forrest Gump', 'Bastardos Inglórios', 'Central do Brasil', 'Vikings', 'Tropa de Elite');
+
+
+UPDATE Entreterimento
+SET RANKING = CASE 
+                WHEN NOME IN ('The Irishman', 'Inception', 'Cidade de Deus', 'The Witcher') THEN 3
+                ELSE RANKING
+            END
+WHERE NOME IN ('The Irishman', 'Inception', 'Cidade de Deus', 'The Witcher');
+UPDATE ENTRETERIMENTO
+SET RANKING = 
+    CASE 
+        WHEN NOME IN ('Breaking Bad', 'Friends', 'The Dark Knight', 'The Shawshank Redemption', 'The Matrix', 'Interview with the Vampire', 'Kill Bill: Volume 1', 'Mr. & Mrs. Smith', 'Money Heist') THEN 1
+        WHEN NOME IN ('Pulp Fiction', 'Fight Club', 'The Godfather', 'Forrest Gump', 'Bastardos Inglórios', 'Central do Brasil', 'Vikings', 'Tropa de Elite') THEN 2
+        WHEN NOME IN ('The Irishman', 'Inception', 'Cidade de Deus', 'The Witcher') THEN 3
+        ELSE 0
+    END;
+
+
